@@ -26,6 +26,10 @@ dependencies:
 library:
   source-dirs: src
 
+ghc-options:
+  - -Wall
+  - -Werror
+
 executables:
   pandoc-test-exe:
     main:                Main.hs
@@ -35,6 +39,7 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
+    - filepath
     - pandoc-test
 
 tests:

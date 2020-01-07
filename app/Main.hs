@@ -1,27 +1,21 @@
-{-# LANGUAGE LambdaCase        #-}
+{-# LANGUAGE LambdaCase #-}
 
 module Main where
 
 import Lib (docx2html)
 
-import System.IO (hPutStrLn, stderr)
 import System.Environment (getArgs)
+import System.FilePath (replaceExtension, FilePath)
 
-import Control.Monad ((<=<))
-
-import Data.ByteString (ByteString)
 import qualified Data.ByteString as BS
 
 main :: IO ()
 main = getArgs >>= \case
   [file] -> convert file
-  _      -> usage
+  _      -> error "Usage: pandoc_test <filename.docx>"
 
-usage :: IO ()
-usage = hPutStrLn stderr "Usage: pandoc_test <filename.docx>"
+convert :: FilePath -> IO ()
+convert f = BS.readFile f >>= BS.writeFile (newFilename f) . docx2html
 
-convert :: String -> IO ()
-convert = saveFile . docx2html <=< BS.readFile
-
-saveFile :: ByteString -> IO ()
-saveFile = print
+newFilename :: FilePath -> FilePath
+newFilename = flip replaceExtension "html"
