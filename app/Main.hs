@@ -7,7 +7,8 @@ import Lib (docx2html)
 import System.Environment (getArgs)
 import System.FilePath (replaceExtension, FilePath)
 
-import qualified Data.ByteString as BS
+import qualified Data.ByteString.Lazy as BS
+import qualified Data.Text.IO as T
 
 main :: IO ()
 main = getArgs >>= \case
@@ -15,7 +16,7 @@ main = getArgs >>= \case
   _      -> error "Usage: pandoc_test <filename.docx>"
 
 convert :: FilePath -> IO ()
-convert f = BS.readFile f >>= BS.writeFile (newFilename f) . docx2html
+convert f = BS.readFile f >>= T.writeFile (newFilename f) . docx2html
 
 newFilename :: FilePath -> FilePath
 newFilename = flip replaceExtension "html"
