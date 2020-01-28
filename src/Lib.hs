@@ -9,9 +9,10 @@ import Data.Default (def)
 import Control.Monad ((<=<))
 
 import Text.Pandoc (readDocx, writeHtml5String, runPure)
+import Text.Pandoc.Options
 
 docx2html :: ByteString -> Text
 docx2html =
   either (error . show) id
   . runPure
-  . (writeHtml5String def <=< readDocx def)
+  . (writeHtml5String def <=< readDocx def { readerTrackChanges = AllChanges} )
