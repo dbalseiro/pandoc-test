@@ -8,9 +8,10 @@ import Lib (docx2html)
 import System.Environment (getArgs)
 import System.FilePath (replaceExtension, FilePath)
 
+import Data.Semigroup ((<>))
+import Data.Text (Text)
 import qualified Data.ByteString.Lazy as BS
 import qualified Data.Text.IO as T
-import Data.Text (Text)
 import qualified Data.Text as T
 
 main :: IO ()
@@ -20,9 +21,10 @@ main = getArgs >>= \case
 
 convert :: FilePath -> IO ()
 convert f = BS.readFile f
-            >>= T.writeFile (newFilename f)
-                . replaceDeletion
-                . replaceInsertion
+            >>= T.putStrLn
+            -- >>= T.writeFile (newFilename f)
+                -- . replaceDeletion
+                -- . replaceInsertion
                 . docx2html
 
 replaceTextWith :: Text -> Text -> Text -> Text
