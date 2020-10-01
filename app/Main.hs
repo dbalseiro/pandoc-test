@@ -28,12 +28,10 @@ convert f = BS.readFile f
                 . docx2html
 
 replaceTextWith :: Text -> Text -> Text -> Text
-replaceTextWith from to txt =
-  let (preffix, suffix) = T.breakOn from txt
-   in if T.null suffix
-        then preffix
-        else preffix <> replaceTextWith from to (replaceText suffix)
-  where
+replaceTextWith from to txt = go $ T.breakOn from txt
+   where
+    go (p, []) = p
+    go (p, s)  = p <> replaceTextWith from to (replaceText s)
     replaceText t = to <> T.dropWhile ('>' /=) (T.drop (T.length from) t)
 
 replaceDeletion :: Text -> Text
