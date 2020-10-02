@@ -3,10 +3,59 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: pandoc-citeproc-0.14.1.5@sha256:5ffe03eaf6440cfbdfd964892f89d91bd27a1beb4ec9d7ff2ff5c47dbef1690d,7622
+    pantry-tree:
+      size: 22327
+      sha256: 55c275076baf41950d7d9390533bcf67476789fe8864057a4c98980036381e68
+  original:
+    hackage: pandoc-citeproc-0.14.1.5
+- completed:
+    hackage: hslua-0.9.5@sha256:43af5a6db126bc04b9aa9a01bf7a14a8c136b47c497e804ce73169b16c281d61,7960
+    pantry-tree:
+      size: 5586
+      sha256: 58a7955fc2f772d240c77e20448c6b7d09197420da0728ebe6a7f79c236d5667
+  original:
+    hackage: hslua-0.9.5
+- completed:
+    hackage: skylighting-0.6@sha256:e4f549f9f0075723722f674c5c0026f0abc3c87d98c306a433d183151e386e59,15139
+    pantry-tree:
+      size: 21259
+      sha256: 849609017f86fe0a426966a9a790cb1de7f5926d610b5f7be6066cf8763c99c9
+  original:
+    hackage: skylighting-0.6
+- completed:
+    hackage: ansi-terminal-0.7.1.1@sha256:ba1735bd76ff3ee3861e7b66aae453eafc0be84b3383e89100748808109fd4f8,3977
+    pantry-tree:
+      size: 1282
+      sha256: 8fc2dccffa6d4b1c80b7b794290ff228928d64b84facf6daa0cf3bcb36b47923
+  original:
+    hackage: ansi-terminal-0.7.1.1
+- completed:
+    hackage: tasty-1.0.0.1@sha256:f60f0baac23616703612c8c78a74b710ff74a940cb91dd3dde97fa39710274fa,2469
+    pantry-tree:
+      size: 1723
+      sha256: 725531252aeb5648face2ed507137474de436e1d24ab9735023065745d367af3
+  original:
+    hackage: tasty-1.0.0.1
+- completed:
+    hackage: texmath-0.10.1.1@sha256:dcdaabfa23016f64328fcc6b67e830572aa0e7b232c5c586312c8ee1b4fb1a0b,6883
+    pantry-tree:
+      size: 274024
+      sha256: 1b3811150d3ca853498351de1a6a636f965f82af30dad39648a9cabee43e65ad
+  original:
+    hackage: texmath-0.10.1.1
+- completed:
+    hackage: tagsoup-0.14.6@sha256:a7f5d53ddd4fde0ec9642a317b6b502c66778a9e0e070cc62df88c14a53c580a,2129
+    pantry-tree:
+      size: 1429
+      sha256: 3ed5f297be3d88e917672174d4668e11ccc161b0864a5b84e6be2827adca6e1b
+  original:
+    hackage: tagsoup-0.14.6
 snapshots:
 - completed:
-    size: 527836
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/11/22.yaml
-    sha256: 341870ac98d8a9f8f77c4adf2e9e0b22063e264a7fbeb4c85b7af5f380dac60e
-  original: lts-11.22
+    size: 567342
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/10/3.yaml
+    sha256: b3d22b89ec630597ad007088e98aa1c8d04844b6c0f23970b513a2862e0b8f0a
+  original: lts-10.3

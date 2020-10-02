@@ -1,8 +1,18 @@
-resolver: lts-11.22
+# resolver: lts-14.6
+resolver: lts-10.3
 packages:
 - .
-- ../pandoc
+- ../../work/hh/pandoc
 
 flags:
   pandoc:
     embed_data_files: true
+
+extra-deps:
+- pandoc-citeproc-0.14.1.5
+- hslua-0.9.5
+- skylighting-0.6
+- ansi-terminal-0.7.1.1
+- tasty-1.0.0.1
+- texmath-0.10.1.1
+- tagsoup-0.14.6
